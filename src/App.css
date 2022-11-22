@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  display: grid;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+article{
+  min-height: 30vh;
+  display: flex;
+    flex-wrap: wrap;
+    flex-grow: 3;
+    gap: 20px;
+    justify-content: center;
+}
+
+footer{
+  min-height: 10vh;
+}

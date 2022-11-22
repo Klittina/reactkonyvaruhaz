@@ -1,0 +1,11 @@
+.konyv{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: aliceblue;
+    width: 120px;
+}
+
+.konyv h3{
+    background-color: aquamarine;
+    
+}
