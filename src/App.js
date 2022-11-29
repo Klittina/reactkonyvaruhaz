@@ -2,28 +2,41 @@ import { useState } from 'react';
 import './App.css';
 import Konyv from './Konyv';
 import Kosar from './Kosar';
+import KosarModel from './model/kosarModel';
+
+
+
 
 const konyvTomb= [
   {
+    id:1,
     cim:"Bábel",
     szerzo:"Leiner Laura",
-    ar:4990
+    ar:4990,
+    db:1
   },{
+    id:2,
     cim:"Hannibal ébredése",
     szerzo:"Thomas Harris",
-    ar:4990
+    ar:4990,
+    db:1
   },{
+    id:3,
     cim:"Java programozás",
     szerzo:"Kaczur Sándor",
     ar:4990
   },{
+    id:4,
     cim:"Apa, randizhatok egy lovaggal?",
     szerzo:"On Sai",
-    ar:3514
+    ar:3514,
+    db:1
   },{
+    id:5,
     cim:"Cinder és Ella",
     szerzo:"Kelly Oram",
-    ar:2374
+    ar:2374,
+    db:1
   }
 ]
 
@@ -39,17 +52,18 @@ function App() {
   const[osszAr,setOsszar]=useState(0);
   const[kosaram,setKosaram] = useState([]);
 
+  const kosarModel = new KosarModel(kosaram);
+
   function kosarKezeles(adat){
-      console.log(adat);
+      //console.log(adat);
       /** Számoljuk meg, hány könyvet raktunk bele a kosárba 
        * db++;
       */
       setDb(db+1);
       setOsszar(osszAr+adat.ar);
-      kosaram.push(adat);
-      setKosaram(kosaram);
-      console.log(kosaram)
-      console.log(db);
+      kosarModel.setKosaram(adat);
+      setKosaram(kosarModel.getKosaram());
+      //console.log(kosaram)
   }
   return (
     <div className="App">

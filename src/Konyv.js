@@ -3,7 +3,7 @@ import './Konyv.css';
 function Konyv(props){
 
     function kosarba(){
-        console.log(props.konyvObj);
+        //console.log(props.konyvObj);
         props.kosarkezelesFv(props.konyvObj);
     }
 
