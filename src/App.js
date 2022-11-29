@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './App.css';
 import Konyv from './Konyv';
+import Kosar from './Kosar';
 
 const konyvTomb= [
   {
@@ -27,18 +29,60 @@ const konyvTomb= [
 
 function App() {
 
-  function kosarkezeles(adat){
+  /** state - reprezentálják az oldal állapotát
+   * befrissitik az oldal vonatkozó részét
+   * 
+  let db = 0;
+   */
+
+  const[db,setDb] = useState(0);
+  const[osszAr,setOsszar]=useState(0);
+  const[kosaram,setKosaram] = useState([]);
+
+  function kosarKezeles(adat){
       console.log(adat);
-      
+      /** Számoljuk meg, hány könyvet raktunk bele a kosárba 
+       * db++;
+      */
+      setDb(db+1);
+      setOsszar(osszAr+adat.ar);
+      kosaram.push(adat);
+      setKosaram(kosaram);
+      console.log(kosaram)
+      console.log(db);
   }
   return (
     <div className="App">
       <header className="App-header">
       <h1>Könyváruház</h1>
       </header>
+      <section>
+      <p>A könyvek darabszáma: {db}</p>
+      <p>A könyvek összára: {osszAr}</p>
+
+      <table className='table table-striped'>
+      <thead>
+      <tr>
+      <th>Szerő</th>
+      <th>Cím</th>
+      <th>Ár</th>
+      <th>Db</th>
+      </tr>
+      </thead>
+      <tbody>
+      
+      {kosaram.map((ko,index)=>{
+        return(<Kosar kosarObj={ko} key={index}/>);
+      }
+
+      )}
+      </tbody>
+      
+      </table>
+      </section>
       <article>
       {konyvTomb.map((konyv,index)=>{
-        return(<Konyv konyvObj={konyv} key={index} kosarkezelesFv={kosarkezeles}/>)
+        return(<Konyv konyvObj={konyv} key={index} kosarkezelesFv={kosarKezeles}/>)
       }
 
       )}
