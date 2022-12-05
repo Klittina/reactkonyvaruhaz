@@ -3,12 +3,14 @@ import './Kosar.css';
 function Kosar(props){
 
     function kosarminusz(){
-        props.kosarkezelesFv(props.kosarObj.db);
+        props.kosarnemkezelFv(props.kosarObj.db);
+        console.log(props.kosarObj);
 
     }
 
     function kosarplusz(){
-        props.kosarkezelesFv(props.kosarObj.db);
+        props.kosarnemkezelFv(props.kosarObj.db);
+        console.log(props.kosarObj);
     }
 
     /**

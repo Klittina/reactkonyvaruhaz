@@ -10,33 +10,34 @@ import KosarModel from './model/kosarModel';
 const konyvTomb= [
   {
     id:1,
+    db:1,
     cim:"Bábel",
     szerzo:"Leiner Laura",
-    ar:4990,
-    db:1
+    ar:4990
   },{
     id:2,
+    db:1,
     cim:"Hannibal ébredése",
     szerzo:"Thomas Harris",
-    ar:4990,
-    db:1
+    ar:4990
   },{
     id:3,
+    db:1,
     cim:"Java programozás",
     szerzo:"Kaczur Sándor",
     ar:4990
   },{
     id:4,
+    db:1,
     cim:"Apa, randizhatok egy lovaggal?",
     szerzo:"On Sai",
-    ar:3514,
-    db:1
+    ar:3514
   },{
     id:5,
+    db:1,
     cim:"Cinder és Ella",
     szerzo:"Kelly Oram",
-    ar:2374,
-    db:1
+    ar:2374
   }
 ]
 
@@ -62,6 +63,7 @@ function App() {
       setDb(db+1);
       setOsszar(osszAr+adat.ar);
       kosarModel.setKosaram(adat);
+      console.log(adat);
       setKosaram(kosarModel.getKosaram());
       //console.log(kosaram)
   }
@@ -86,7 +88,7 @@ function App() {
       <tbody>
       
       {kosaram.map((ko,index)=>{
-        return(<Kosar kosarObj={ko} key={index}/>);
+        return(<Kosar kosarObj={ko} key={index} kosarnemkezelFv={kosarKezeles}/>);
       }
 
       )}
