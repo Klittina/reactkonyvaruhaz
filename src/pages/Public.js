@@ -4,43 +4,6 @@ import Konyv from '../components/public/Konyv'
 import Kosar from '../components/public/Kosar';
 import KosarModel from '../model/kosarModel';
 
-
-
-
-const konyvTomb= [
-  {
-    id:1,
-    db:1,
-    cim:"Bábel",
-    szerzo:"Leiner Laura",
-    ar:4990
-  },{
-    id:2,
-    db:1,
-    cim:"Hannibal ébredése",
-    szerzo:"Thomas Harris",
-    ar:4990
-  },{
-    id:3,
-    db:1,
-    cim:"Java programozás",
-    szerzo:"Kaczur Sándor",
-    ar:4990
-  },{
-    id:4,
-    db:1,
-    cim:"Apa, randizhatok egy lovaggal?",
-    szerzo:"On Sai",
-    ar:3514
-  },{
-    id:5,
-    db:1,
-    cim:"Cinder és Ella",
-    szerzo:"Kelly Oram",
-    ar:2374
-  }
-]
-
 function Public() {
 
   /** state - reprezentálják az oldal állapotát
@@ -55,6 +18,8 @@ function Public() {
 
   const kosarModel = new KosarModel(kosaram);
 
+  const fokonyvek = require('../konyvTomb.json');
+
   function kosarKezeles(adat){
       //console.log(adat);
       /** Számoljuk meg, hány könyvet raktunk bele a kosárba 
@@ -65,7 +30,6 @@ function Public() {
       kosarModel.setKosaram(adat);
       console.log(adat);
       setKosaram(kosarModel.getKosaram());
-      //console.log(kosaram)
   }
   return (
     <div className="App">
@@ -94,18 +58,11 @@ function Public() {
       </table>
       </section>
       <article>
-      {konyvTomb.map((konyv,index)=>{
+      {fokonyvek.konyvTomb.map((konyv,index)=>{
         return(<Konyv konyvObj={konyv} key={index} kosarkezelesFv={kosarKezeles}/>)
       }
 
       )}
-      {/*
-      <Konyv konyvObj={konyvTomb[0]} />
-      <Konyv konyvObj={konyvTomb[1]} />
-      <Konyv konyvObj={konyvTomb[2]} />
-      <Konyv konyvObj={konyvTomb[3]} />
-      <Konyv konyvObj={konyvTomb[4]} />  
-    */}
       </article>
     </div>
   );

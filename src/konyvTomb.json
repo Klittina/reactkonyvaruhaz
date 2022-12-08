@@ -1,0 +1,36 @@
+{
+    "konyvTomb" :[
+            {
+            "id":1,
+            "db":1,
+            "cim":"Bábel",
+            "szerzo":"Leiner Laura",
+            "ar":4990
+            },{
+            "id":2,
+            "db":1,
+            "cim":"Hannibal Ébredése",
+            "szerzo":"Thomas Harris",
+            "ar":4990
+            },{
+            "id":3,
+            "db":1,
+            "cim":"Java Programozás",
+            "szerzo":"Kaczur Sándor",
+            "ar":4990
+            },{
+            "id":4,
+            "db":1,
+            "cim":"Apa, randizhatok egy lovaggal?",
+            "szerzo":"On Sai",
+            "ar":3514
+            },{
+            "id":5,
+            "db":1,
+            "cim":"Cinder és Ella",
+            "szerzo":"Kelly Oram",
+            "ar":4990
+            }
+        ]
+    
+}
